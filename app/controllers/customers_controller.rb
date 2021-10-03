@@ -28,8 +28,8 @@ class CustomersController < ApplicationController
       flash.notice = "The customer record was created successfully."
       redirect_to @customer
     else
-      flash.now.alert = @customer.errors.full_messages.to_setence
-      redirect_to :new
+      flash.now.alert = @customer.errors.full_messages.to_sentence
+      render :new
     end
 =begin
     @customer = Customer.new(customer_params)
@@ -53,8 +53,8 @@ class CustomersController < ApplicationController
       flash.notice = "The customer record was updated successfully."
       redirect_to @customer
     else
-      flash.now.alert = @customer.errors.full_messages.to_setence
-      redirect_to :edit
+      flash.now.alert = @customer.errors.full_messages.to_sentence
+      render :edit
     end
 =begin
     respond_to do |format|
